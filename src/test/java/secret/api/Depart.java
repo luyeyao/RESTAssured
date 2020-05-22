@@ -49,6 +49,7 @@ public class Depart {
     public Response delDep(int id){
         return given()
                 .param("access_token",WeWork.getInstance().getToken())
+                .param("id",id)
                 .when().get("https://qyapi.weixin.qq.com/cgi-bin/department/delete")
                 .then()
                 .body("errmsg",equalTo("deleted"))
